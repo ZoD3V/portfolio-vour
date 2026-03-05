@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
 import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
-// import { AnimatedTextLines } from "../components/AnimatedTextLines";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import AnimatedTextLines from "../components/AnimatedTextLines";
 
 const About = () => {
   const text = `Passionate about clean architecture
@@ -31,7 +31,7 @@ const About = () => {
     gsap.set(imgRef.current, {
       clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
     });
-    
+
     gsap.to(imgRef.current, {
       clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
       duration: 2,
@@ -56,7 +56,7 @@ const About = () => {
           alt="man"
           className="w-md rounded-xl"
         />
-        {/* <AnimatedTextLines text={aboutText} className={"w-full"} /> */}
+        <AnimatedTextLines text={aboutText} className={"w-full"} />
       </div>
     </section>
   );
