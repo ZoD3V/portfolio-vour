@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
-import { AnimatedTextLines } from "../components/AnimatedTextLines";
+// import { AnimatedTextLines } from "../components/AnimatedTextLines";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
@@ -56,7 +56,7 @@ const About = () => {
           alt="man"
           className="w-md rounded-xl"
         />
-        <AnimatedTextLines text={aboutText} className={"w-full"} />
+        {/* <AnimatedTextLines text={aboutText} className={"w-full"} /> */}
       </div>
     </section>
   );
