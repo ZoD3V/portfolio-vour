@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import AnimatedTextLines from "./AnimatedTextLines";
+import AnimatedTextLines from "../components/AnimatedTextLines";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
@@ -55,9 +55,9 @@ const AnimatedHeaderSection = ({
             <h1
               className={`flex flex-col gap-12 uppercase banner-text-responsive sm:gap-16 md:block ${textColor}`}
             >
-              {titleParts.map((part, index) => (
-                <span key={index}>{part} </span>
-              ))}
+              {title}
+              {/* {titleParts.map((part, index) => (
+                <span key={index}>{part} </span> */}
             </h1>
           </div>
         </div>
