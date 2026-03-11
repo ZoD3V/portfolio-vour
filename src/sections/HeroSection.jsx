@@ -4,18 +4,20 @@ import { Planet } from "../components/Planet";
 import { Environment, Float, Lightformer } from "@react-three/drei";
 import { useMediaQuery } from "react-responsive";
 
-const Hero = () => {
+const Hero = ({
+  headline = "",
+  firstName = "Vour",
+  lastName = "Dev",
+  shortBio = "",
+}) => {
   const isMobile = useMediaQuery({ maxWidth: 853 });
-  const text = `I help growing brands and startups gain an
-unfair advantage through premium
-results driven webs/apps`;
 
   return (
     <section id="home" className="flex flex-col justify-end min-h-screen">
       <AnimatedHeaderSection
-        subTitle={"404 No Bugs Found"}
-        title={"Vour Dev"}
-        text={text}
+        subTitle={headline}
+        title={`${firstName} ${lastName}`}
+        text={shortBio}
         textColor={"text-black"}
       />
       <figure

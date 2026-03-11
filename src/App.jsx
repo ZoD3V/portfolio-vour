@@ -1,14 +1,7 @@
-import React, { useEffect, useState } from "react";
-import Navbar from "./components/Navbar";
-import Hero from "./sections/HeroSection";
-import ServiceSummary from "./sections/ServiceSummary";
-import Services from "./sections/Services";
+import { useEffect, useState } from "react";
 import ReactLenis from "lenis/react";
-import About from "./sections/About";
-import Works from "./sections/Works";
-import ContactSummary from "./sections/ContactSummary";
-import Contact from "./sections/Contact";
 import { useProgress } from "@react-three/drei";
+import { Outlet } from "react-router-dom";
 
 const App = () => {
   const { progress } = useProgress();
@@ -22,6 +15,7 @@ const App = () => {
 
   return (
     <ReactLenis root className="relative w-screen min-h-screen overflow-x-auto">
+      {/* Loading Screen */}
       {!isReady && (
         <div className="fixed inset-0 z-999 flex flex-col items-center justify-center bg-black text-white transition-opacity duration-700 font-light">
           <p className="mb-4 text-xl tracking-widest animate-pulse">
@@ -35,19 +29,14 @@ const App = () => {
           </div>
         </div>
       )}
+
+      {/* Main Content */}
       <div
-        className={`${
-          isReady ? "opacity-100" : "opacity-0"
-        } transition-opacity duration-1000`}
+        className={`${isReady ? "opacity-100" : "opacity-0"} transition-opacity duration-1000`}
       >
-        <Navbar />
-        <Hero />
-        <ServiceSummary />
-        <Services />
-        <About />
-        <Works />
-        <ContactSummary />
-        <Contact />
+        <main>
+          <Outlet />
+        </main>
       </div>
     </ReactLenis>
   );

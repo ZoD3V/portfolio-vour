@@ -13,7 +13,7 @@ const AnimatedHeaderSection = ({
   const contextRef = useRef(null);
   const headerRef = useRef(null);
   const shouldSplitTitle = title.includes(" ");
-  const titleParts = shouldSplitTitle ? title.split(" ") : [title];
+  // const titleParts = shouldSplitTitle ? title.split(" ") : [title];
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: withScrollTrigger
